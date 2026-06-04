@@ -8,11 +8,12 @@ const activities = [
 ];
 
 const decoItems = [
-  ["📱", "Phone Case", "From $25"],
-  ["🪞", "Mirror", "From $20"],
-  ["🪮", "Brush", "From $18"],
-  ["🎀", "Hair Clips", "From $12"],
-  ["🎁", "Custom Item", "Ask Us!"],
+  ["phone", "Phone Case", "$20"],
+  ["mirror", "Mirror", "$8"],
+  ["brush", "Brush", "$8"],
+  ["hair-clip", "Hair Clips", "2 for $5"],
+  ["claw-clip", "Claw Clip", "$8"],
+  ["custom", "Custom Item", "Ask Us!"],
 ];
 
 const lattes = [
@@ -26,12 +27,12 @@ const lattes = [
 ];
 
 const shop = [
-  ["🧸", "Kawaii Plushies", "Cinnamoroll, Pokemon, anime & more — soft, squishy, and irresistibly cute.", "Fan Fave", "From $12", "plush"],
-  ["🎁", "Blind Boxes", "Mystery collectibles — will you pull the secret rare? The thrill is half the fun.", "New In", "From $10", "blind"],
-  ["🧍", "Anime Figures", "Chibi figures and collector pieces from your favorite series.", "", "From $14", "anime"],
-  ["🍿", "Exotic Snacks", "Buldak chips, Japanese mochi, Korean sweets & more — always rotating.", "Imported", "From $4", "snacks"],
-  ["💍", "Accessories & Gifts", "Beaded jewelry, charms, keychains, and the cutest little gifts for someone special.", "", "From $5", "gifts"],
-  ["🍬", "Craft Supply Add-ons", "Extra charms, gems, and deco cream sets to keep creating at home.", "", "From $8", "craft"],
+  ["🧸", "Kawaii Plushies", "Cinnamoroll, Pokemon, anime & more — soft, squishy, and irresistibly cute.", "Fan Fave", "plush"],
+  ["🎁", "Blind Boxes", "Mystery collectibles — will you pull the secret rare? The thrill is half the fun.", "New In", "blind"],
+  ["🧍", "Anime Figures", "Chibi figures and collector pieces from your favorite series.", "", "anime"],
+  ["🍿", "Exotic Snacks", "Buldak chips, Japanese mochi, Korean sweets & more — always rotating.", "Imported", "snacks"],
+  ["💍", "Accessories & Gifts", "Beaded jewelry, charms, keychains, and the cutest little gifts for someone special.", "", "gifts"],
+  ["🍬", "Craft Supply Add-ons", "Extra charms, gems, and deco cream sets to keep creating at home.", "", "craft"],
 ];
 
 const snacks = [
@@ -127,9 +128,9 @@ export default function Home() {
                 <a href="#contact" className="btn btn-primary small-btn">Book a Session 📅</a>
               </div>
               <div className="deco-items-grid">
-                {decoItems.map(([emoji, name, price]) => (
+                {decoItems.map(([icon, name, price]) => (
                   <div className="deco-item" key={name}>
-                    <span className="di-emoji">{emoji}</span>
+                    <span className={`di-emoji di-${icon}`} aria-hidden="true" />
                     <div className="di-name">{name}</div>
                     <div className="di-price">{price}</div>
                   </div>
@@ -155,12 +156,12 @@ export default function Home() {
 
             <div className="booking-banner reveal">
               <div>
-                <h3>Book Your Studio Session 📅</h3>
-                <p>Perfect for birthdays, girls&apos; nights, date nights, or a solo creative escape. Walk-ins always welcome — reservations guarantee your spot!</p>
+                <h3>Book Your Event 📅</h3>
+                <p>Planning a birthday, girls&apos; night, date night, or private creative party? Email us and we&apos;ll help you plan it.</p>
               </div>
               <div className="booking-actions">
-                <a href="#contact" className="btn btn-white">Reserve Now ✨</a>
-                <span>or just walk in — we&apos;d love you here!</span>
+                <a href="mailto:kawaiividabaltimore@gmail.com?subject=Kawaii%20Vida%20Event%20Inquiry" className="btn btn-white">Email Us ✨</a>
+                <span>kawaiividabaltimore@gmail.com</span>
               </div>
             </div>
           </div>
@@ -206,10 +207,10 @@ export default function Home() {
           <div className="section-wrap">
             <SectionIntro tag="🛍️ Gift Shop" title={<>Kawaii <span className="accent">Gift Shop</span></>} copy="Hand-picked kawaii goods, imported snacks, blind boxes, collectibles, and craft add-ons." />
             <div className="shop-grid">
-              {shop.map(([emoji, title, desc, badge, price, tone]) => (
+              {shop.map(([emoji, title, desc, badge, tone]) => (
                 <article className="shop-card reveal" key={title}>
                   <div className={`sc-img ${tone}`}>{badge ? <div className="sc-badge">{badge}</div> : null}<span>{emoji}</span></div>
-                  <div className="sc-body"><div className="sc-name">{title}</div><p className="sc-desc">{desc}</p><div className="sc-price">{price}</div></div>
+                  <div className="sc-body"><div className="sc-name">{title}</div><p className="sc-desc">{desc}</p></div>
                 </article>
               ))}
             </div>
