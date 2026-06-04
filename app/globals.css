@@ -679,9 +679,118 @@ section {
 }
 
 .di-emoji {
-  display: block;
-  font-size: 2.2rem;
+  align-items: center;
+  color: var(--hot-pink);
+  display: inline-flex;
+  height: 44px;
+  justify-content: center;
   margin-bottom: 8px;
+  position: relative;
+  width: 44px;
+}
+
+.di-emoji::before,
+.di-emoji::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.di-phone::before {
+  border: 3px solid currentColor;
+  border-radius: 8px;
+  height: 36px;
+  width: 23px;
+}
+
+.di-phone::after {
+  background: currentColor;
+  border-radius: 99px;
+  bottom: 8px;
+  height: 3px;
+  width: 6px;
+}
+
+.di-mirror::before {
+  border: 3px solid currentColor;
+  border-radius: 50%;
+  height: 30px;
+  top: 3px;
+  width: 30px;
+}
+
+.di-mirror::after {
+  background: currentColor;
+  border-radius: 99px;
+  bottom: 3px;
+  height: 16px;
+  width: 5px;
+}
+
+.di-brush::before {
+  background: currentColor;
+  border-radius: 99px;
+  height: 35px;
+  transform: rotate(36deg);
+  width: 7px;
+}
+
+.di-brush::after {
+  background: var(--lilac);
+  border: 3px solid currentColor;
+  border-radius: 8px 8px 12px 12px;
+  height: 16px;
+  right: 7px;
+  top: 5px;
+  transform: rotate(36deg);
+  width: 15px;
+}
+
+.di-hair-clip::before {
+  border: 3px solid currentColor;
+  border-radius: 50%;
+  height: 24px;
+  transform: translateX(-8px) rotate(-18deg);
+  width: 24px;
+}
+
+.di-hair-clip::after {
+  border: 3px solid currentColor;
+  border-radius: 50%;
+  height: 24px;
+  transform: translateX(8px) rotate(18deg);
+  width: 24px;
+}
+
+.di-claw-clip::before {
+  border: 4px solid currentColor;
+  border-left-color: transparent;
+  border-radius: 50%;
+  height: 34px;
+  transform: rotate(45deg);
+  width: 34px;
+}
+
+.di-claw-clip::after {
+  background: currentColor;
+  border-radius: 99px;
+  height: 24px;
+  width: 5px;
+}
+
+.di-custom::before {
+  background: currentColor;
+  border-radius: 7px;
+  height: 28px;
+  width: 30px;
+}
+
+.di-custom::after {
+  border-left: 3px solid white;
+  border-top: 3px solid white;
+  height: 28px;
+  transform: rotate(45deg);
+  width: 28px;
 }
 
 .di-name,
