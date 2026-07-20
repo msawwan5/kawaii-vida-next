@@ -2,17 +2,15 @@ import { ClawCanvas, DecoCanvas, SiteEffects } from "@/components/SiteEffects";
 import { MobileNav } from "@/components/MobileNav";
 import type React from "react";
 
-const activities = [
-  ["💎", "Diamond Painting", "Relaxing · All ages", "Place tiny resin diamonds onto a canvas to reveal a sparkling gem-studded artwork. Super meditative and totally gorgeous — zero mess, all magic.", "From $18", "Take Home"],
-  ["🖌️", "Paint by Number", "Chill · In-studio or take home", "Follow the numbered canvas with pre-matched paints to create beautiful artwork. No talent required — just vibe with your latte and let the colors flow.", "From $20", "Take Home"],
-];
-
 const decoItems = [
-  ["phone", "Phone Case", "$20"],
-  ["mirror", "Mirror", "$8"],
-  ["brush", "Brush", "$8"],
-  ["hair-clip", "Hair Clips", "2 for $5"],
-  ["claw-clip", "Claw Clip", "$8"],
+  ["phone", "Phone Case", "$25"],
+  ["heart-mirror", "Heart Mirror", "$9"],
+  ["brush", "Brush", "$9"],
+  ["hair-clip", "Hair Clips", "2 for $8"],
+  ["claw-clip", "Claw Clip", "$9"],
+  ["jewelry-box", "Jewelry Box", "$28"],
+  ["heart-purse", "Heart Purse", "$28"],
+  ["instax-frame", "Instax Frame + Photo", "$15"],
   ["custom", "Custom Item", "Ask Us!"],
 ];
 
@@ -32,17 +30,14 @@ const shop = [
   ["🧍", "Anime Figures", "Chibi figures and collector pieces from your favorite series.", "", "anime"],
   ["🍿", "Exotic Snacks", "Buldak chips, Japanese mochi, Korean sweets & more — always rotating.", "Imported", "snacks"],
   ["💍", "Accessories & Gifts", "Beaded jewelry, charms, keychains, and the cutest little gifts for someone special.", "", "gifts"],
-  ["🍬", "Craft Supply Add-ons", "Extra charms, gems, and deco cream sets to keep creating at home.", "", "craft"],
 ];
 
 const snacks = [
   ["🧀", "Buldak Cheddar Cheese", "🌶️ Medium"],
   ["🌶️", "Buldak Habanero Lime", "🌶️🌶️ Hot"],
   ["🔥", "Buldak Original", "🌶️🌶️🌶️ Extra Hot"],
-  ["🎂", "Cake Fluffy Snow", "🍬 Sweet"],
   ["🍡", "Mini Mochi Treats", "🍬 Sweet"],
   ["🐢", "Turtle Chips", "🌿 Mild"],
-  ["🦄", "Uni Chips WOW", "🌿 Mild-Med"],
   ["🔮", "Mystery Snack of the Week", "🌟 Always Rotating"],
 ];
 
@@ -92,7 +87,7 @@ export default function Home() {
               <a href="#drinks" className="btn btn-outline">View Latte Menu ☕</a>
             </div>
             <div className="hero-pills">
-              {["🍬 Deco Cream", "💎 Diamond Painting", "🖌️ Paint by Number", "☕ Latte Bar", "🕹️ Claw Machines", "🎁 Blind Boxes"].map((pill) => (
+              {["🍬 Deco Cream", "☕ Latte Bar", "🕹️ Claw Machines", "🎁 Blind Boxes"].map((pill) => (
                 <span className="hero-pill" key={pill}>{pill}</span>
               ))}
             </div>
@@ -113,9 +108,8 @@ export default function Home() {
                 </p>
                 <div className="info-chips">
                   <span className="chip">🚶 Walk-ins Welcome</span>
-                  <span className="chip green">📅 Reservations Available</span>
                   <span className="chip">👩‍🎨 All Skill Levels</span>
-                  <span className="chip green">🎂 Party Bookings</span>
+                  <span className="chip green">🎂 10+ Party Reservations</span>
                 </div>
               </div>
             </div>
@@ -125,7 +119,6 @@ export default function Home() {
                 <div className="section-tag">⭐ Our Specialty</div>
                 <h3>Deco Cream <span>Customization</span></h3>
                 <p>Use fluffy deco cream, resin gems, kawaii charms, pearls, and flowers to decorate your item into a one-of-a-kind masterpiece. Every piece is sealed and ready to show off. ✨</p>
-                <a href="#contact" className="btn btn-primary small-btn">Book a Session 📅</a>
               </div>
               <div className="deco-items-grid">
                 {decoItems.map(([icon, name, price]) => (
@@ -138,26 +131,10 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="reveal"><div className="activities-title">✨ More Studio Activities</div></div>
-            <div className="activities-grid">
-              {activities.map(([emoji, title, subtitle, desc, price, badge]) => (
-                <article className="activity-card reveal" key={title}>
-                  <div className="ac-header">
-                    <div className="ac-emoji">{emoji}</div>
-                    <div><div className="ac-title">{title}</div><div className="ac-sub">{subtitle}</div></div>
-                  </div>
-                  <div className="ac-body">
-                    <div className="ac-desc">{desc}</div>
-                    <div className="ac-price-row"><span className="ac-price">{price}</span><span className="ac-badge">{badge}</span></div>
-                  </div>
-                </article>
-              ))}
-            </div>
-
             <div className="booking-banner reveal">
               <div>
-                <h3>Book Your Event 📅</h3>
-                <p>Planning a birthday, girls&apos; night, date night, or private creative party? Email us and we&apos;ll help you plan it.</p>
+                <h3>Party Reservations 📅</h3>
+                <p>Reservations are available for parties of 10 or more only. Email us about your group and we&apos;ll help you plan your visit.</p>
               </div>
               <div className="booking-actions">
                 <a href="mailto:kawaiividabaltimore@gmail.com?subject=Kawaii%20Vida%20Event%20Inquiry" className="btn btn-white">Email Us ✨</a>
@@ -288,7 +265,7 @@ export default function Home() {
       </main>
 
       <footer>
-        <div className="fl-wrap"><img className="brand-mark small" src="/Logo.png" alt="" /><span className="fl-name">kawaii vida ✿</span></div>
+        <div className="fl-wrap"><span className="fl-name">kawaii vida ✿</span></div>
         <p>430 S Highland Ave, Baltimore MD 21224 · kawaiivida.com</p>
         <p>@kawaiividabaltimore · kawaiividabaltimore@gmail.com</p>
         <p className="made">Made with <span className="fh">♥</span> for Baltimore&apos;s creative community</p>
